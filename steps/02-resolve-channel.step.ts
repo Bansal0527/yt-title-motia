@@ -40,7 +40,7 @@ export const handler = async (eventData: any, {emit, logger, state}: any) => {
 
         let channelId : string | null = null;
         let channelName : string = ""
-        if(channel.startWith('@')) {
+        if(channel.startsWith('@')) {
             const handle = channel.substring(1);
 
             const searchURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel&q=${encodeURIComponent(handle)}&key=${YOUTUBE_API_KEY}`;
